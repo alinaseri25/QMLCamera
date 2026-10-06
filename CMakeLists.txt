@@ -34,6 +34,7 @@ qt_add_qml_module(QMLCamera
         components/CCard.qml
         components/CTextField.qml
         components/WalkieHeader.qml
+        components/Toast.qml
         theme/Theme.qml
         pages/SettingsPage.qml
 
@@ -41,6 +42,7 @@ qt_add_qml_module(QMLCamera
         backend.h backend.cpp
         ../../QtLibraries/camera/camera.h ../../QtLibraries/camera/camera.cpp
         ../../QtLibraries/QMLFastImageView/fastimageitem.h ../../QtLibraries/QMLFastImageView/fastimageitem.cpp
+        ../../QtLibraries/dahua/dahuadoorcontroller.h ../../QtLibraries/dahua/dahuadoorcontroller.cpp
 )
 
 qt6_add_resources(QMLCamera "qmlCamera"

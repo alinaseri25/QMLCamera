@@ -15,6 +15,11 @@ Window {
 
     Theme { id: appTheme }
 
+    Toast {
+        id: reportToast
+        themeManager: appTheme
+    }
+
     signal qmlLoaded(VideoSink sink)
     signal camerListRequest()
     signal cameraSelected(int cameraId)
@@ -130,6 +135,10 @@ Window {
 
         function onReportFrameRate(_FPS){
             frameRate.text = "Camera FPS : " + _FPS
+        }
+
+        function onDoorResult(success, message){
+            reportToast.showMessage(success,message);
         }
     }
 }

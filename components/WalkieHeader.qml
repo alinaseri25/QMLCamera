@@ -19,6 +19,28 @@ Rectangle {
         color: theme.textPrimary
     }
 
+    Rectangle
+    {
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        width: 42
+        height: 42
+        radius: theme.radius.md
+        color: theme.hoverColor
+
+        Text {
+            anchors.centerIn: parent
+            text: "\uD83D\uDEAA"
+            font.pixelSize: 20
+            color: theme.textPrimary
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: myBackend.openDoor(1) //root.settingsClicked()
+        }
+    }
+
     Rectangle {
         width: 42
         height: 42

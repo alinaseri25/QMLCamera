@@ -13,7 +13,7 @@ Item {
 
     // ===== State =====
     property int camerId: 0
-    property string rtspUrl: "rtsp://admin:admin@192.168.1.10:554/11"
+    property string rtspUrl: "rtsp://admin:Feyzi5582823@192.168.1.110:554/cam/realmonitor?channel=1&subtype=0"//"rtsp://admin:admin@192.168.1.10:554/11"
     property bool isPhysicalCamera: true
 
     signal applyClicked()

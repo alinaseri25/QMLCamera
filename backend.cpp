@@ -39,6 +39,7 @@ Backend::Backend(QObject *parent)
     : QObject{parent}
 {
     g_mainWindowInstance = this;
+    connect(&dahuaOutdoorPannel,&DahuaDoorController::doorResult,this,&Backend::onDoorResult);
 
 #ifdef ANDROID
     QStringList permissions = {"android.permission.CAMERA"};
@@ -76,6 +77,11 @@ Backend::~Backend()
         worker.terminate();
         worker.wait();
     }
+}
+
+void Backend::openDoor(int channel)
+{
+    dahuaOutdoorPannel.openDoor(QString("192.168.1.110"),QString("admin"),QString("Feyzi5582823"),channel);
 }
 
 void Backend::onQmlLoaded(QVideoSink *sink)
@@ -135,6 +141,11 @@ void Backend::onCameraStatusChanged(CameraState _state, const QString &_descript
     {
         emit startCamera();
     }
+}
+
+void Backend::onDoorResult(bool success, const QString &message)
+{
+    doorResult(success,message);
 }
 
 
